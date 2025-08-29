@@ -60,3 +60,27 @@ btnClose.addEventListener("click", () => {
   mobileMenu.classList.toggle("hidden"); // abre/fecha
   overlay.classList.toggle("hidden"); // abre/fecha
 });
+const slider = document.getElementById("slider");
+  const slides = slider.children;
+  const totalSlides = slides.length;
+  let index = 0;
+ 
+  function showSlide(i) {
+    slider.style.transform = `translateX(${-i * 100}%)`;
+  }
+ 
+  document.getElementById("next").addEventListener("click", () => {
+    index = (index + 1) % totalSlides;
+    showSlide(index);
+  });
+ 
+  document.getElementById("prev").addEventListener("click", () => {
+    index = (index - 1 + totalSlides) % totalSlides;
+    showSlide(index);
+  });
+ 
+  // Auto-play (opcional)
+  setInterval(() => {
+    index = (index + 1) % totalSlides;
+    showSlide(index);
+  }, 5000); // muda a cada 5s
