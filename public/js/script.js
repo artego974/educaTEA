@@ -91,6 +91,7 @@ const modalClose = document.getElementById("modal-close");
 
 // Abrir modal com animação
 btn_acessar.addEventListener("click", () => {
+  alert("click")
   modal.classList.remove("hidden");
   setTimeout(() => {
     modalBox.classList.remove("scale-95", "opacity-0");
