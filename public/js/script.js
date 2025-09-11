@@ -89,25 +89,8 @@ const modal = document.getElementById("modal-acessar");
 const modalBox = document.getElementById("modal-box");
 const modalClose = document.getElementById("modal-close");
 
-// Abrir modal com animação
 btn_acessar.addEventListener("click", () => {
-  modal.classList.remove("hidden");
-  setTimeout(() => {
-    modalBox.classList.remove("scale-95", "opacity-0");
-    modalBox.classList.add("scale-100", "opacity-100");
-  }, 10);
-});
-
-// Fechar modal
-function fecharModal() {
-  modalBox.classList.remove("scale-100", "opacity-100");
-  modalBox.classList.add("scale-95", "opacity-0");
-  setTimeout(() => {
-    modal.classList.add("hidden");
-  }, 300); // mesmo tempo da duração do transition
-}
-
-modalClose.addEventListener("click", fecharModal);
-modal.addEventListener("click", (e) => {
-  if (e.target === modal) fecharModal();
+  
+  window.open("https://gamifyhealth.itch.io/educatea", "_blank");
+  
 });
