@@ -42,7 +42,6 @@ document.addEventListener("DOMContentLoaded", async () => {
   window.carregarComentarios = carregarComentarios;
 });
 
-
 // MENU MOBILE
 
 const btnMenu = document.getElementById("btn-menu");
@@ -61,26 +60,37 @@ btnClose.addEventListener("click", () => {
   overlay.classList.toggle("hidden"); // abre/fecha
 });
 const slider = document.getElementById("slider");
-  const slides = slider.children;
-  const totalSlides = slides.length;
-  let index = 0;
- 
-  function showSlide(i) {
-    slider.style.transform = `translateX(${-i * 100}%)`;
-  }
- 
-  document.getElementById("next").addEventListener("click", () => {
-    index = (index + 1) % totalSlides;
-    showSlide(index);
-  });
- 
-  document.getElementById("prev").addEventListener("click", () => {
-    index = (index - 1 + totalSlides) % totalSlides;
-    showSlide(index);
-  });
- 
-  // Auto-play (opcional)
-  setInterval(() => {
-    index = (index + 1) % totalSlides;
-    showSlide(index);
-  }, 5000); // muda a cada 5s
+const slides = slider.children;
+const totalSlides = slides.length;
+let index = 0;
+
+function showSlide(i) {
+  slider.style.transform = `translateX(${-i * 100}%)`;
+}
+
+document.getElementById("next").addEventListener("click", () => {
+  index = (index + 1) % totalSlides;
+  showSlide(index);
+});
+
+document.getElementById("prev").addEventListener("click", () => {
+  index = (index - 1 + totalSlides) % totalSlides;
+  showSlide(index);
+});
+
+// Auto-play (opcional)
+setInterval(() => {
+  index = (index + 1) % totalSlides;
+  showSlide(index);
+}, 5000); // muda a cada 5s
+
+const btn_acessar = document.querySelector("#btn-acessar");
+const modal = document.getElementById("modal-acessar");
+const modalBox = document.getElementById("modal-box");
+const modalClose = document.getElementById("modal-close");
+
+btn_acessar.addEventListener("click", () => {
+  
+  window.open("https://gamifyhealth.itch.io/educatea", "_blank");
+  
+});
