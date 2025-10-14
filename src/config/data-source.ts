@@ -6,12 +6,12 @@ dotenv.config();
 
 export const AppDataSource = new DataSource({
     type: "mysql",
-    host: "bpu2glxfluxbveprzf7p-mysql.services.clever-cloud.com",
+    host: "b8oqc3pl9qz5gpfnds4t-mysql.services.clever-cloud.com",
     port: 3306,
-    username: "u1rkbfb6cxmulfr9",
-    password: "Rk4Ydm8QlR6Jr6oPlhEN",
-    database: "bpu2glxfluxbveprzf7p",
-    entities: ["api/comentarios.ts"], // dps colocar src/models/*.ts 
+    username: "u1bmp1j2rshootf1",
+    password: "ZC8ZQYsEOmIOgmzBTrwA",
+    database: "b8oqc3pl9qz5gpfnds4t",
+    entities: ["src/models/*.ts"], // dps colocar  api/comentarios.ts
     migrations: ["src/migrations/**/*.ts"],
     synchronize: true,
     logging: false,
