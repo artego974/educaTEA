@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- SEO -->
+    <meta
+      name="description"
+      content="Educa Tea - Jogo educacional inclusiva para pessoas com Transtorno do Espectro Autista (TEA)"
+    />
+    <meta
+      name="keywords"
+      content="Educação, Inclusão, Autismo, TEA, Plataforma Educacional"
+    />
+    <meta name="author" content="Nome do Autor ou da Equipe" />
+
+    <meta property="og:title" content="Educa Tea" />
+    <meta
+      property="og:description"
+      content="Jogo educacional para instrutores de pessoas com TEA."
+    />
+    <meta property="og:image" content="./images/Logo-Main.png" />
+    <meta property="og:type" content="website" />
+
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Favicon -->
+    <link rel="icon" href="./images/Favicon.ico" type="image/x-icon" />
+
+    <title>Educa Tea | Jogo Educacional</title>
+
+    <!-- Fonte personalizada (Montserrat) -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet" />
+    <style>
+      body {
+        font-family: 'Montserrat', sans-serif;
+      }
+    </style>
+  </head>
+  <body
+    class="h-[100dvh] w-full flex flex-col justify-center items-center gap-6 bg-cover bg-center bg-no-repeat px-4 bg-gray-100"
+  >
+    <header class="w-1/2 flex flex-col gap-8 max-w-md w-full">
+      <img src="./images/Logo-Escrita.png" alt="" class="w-48 -mb-8 lg:-mb-4 -ml-2" />
+      <h2 class="text-2xl text-[#091d8d]">Faça seu cadastro</h2>
+    </header>
+
+    <section class="w-1/2 flex flex-col gap-6 max-w-md w-full">
+      <input
+        type="text"
+        name="nome"
+        id="nome"
+        placeholder="Informe o seu nome *"
+        class="p-5 w-full border rounded-xl text-sm placeholder-[#333] focus:outline-none focus:ring-2 focus:ring-[#2f80ed]"
+        required
+      />
+      <input
+        type="email"
+        name="email"
+        id="email"
+        placeholder="Informe o seu email *"
+        class="p-5 w-full border rounded-xl text-sm placeholder-[#333] focus:outline-none focus:ring-2 focus:ring-[#2f80ed]"
+        required
+      />
+      <input
+        type="password"
+        name="senha"
+        id="senha"
+        placeholder="Senha *"
+        class="p-5 w-full border rounded-xl text-sm placeholder-[#333] focus:outline-none focus:ring-2 focus:ring-[#2f80ed]"
+        required
+      />
+     
+      <div id="password-strenght" class="hidden w-full gap-4">
+        <span id="password-strenght-level-1" class="w-1/4 bg-gray-400 block h-2.5 rounded-2xl"></span>
+        <span id="password-strenght-level-2" class="w-1/4 bg-gray-400 block h-2.5 rounded-2xl"></span>
+        <span id="password-strenght-level-3" class="w-1/4 bg-gray-400 block h-2.5 rounded-2xl"></span>
+        <span id="password-strenght-level-4" class="w-1/4 bg-gray-400 block h-2.5 rounded-2xl"></span>
+      </div>
+      <ul id="password-requested" class="hidden text-sm text-gray-600 list-disc pl-5 space-y-1">
+        <li>Pelo menos 6 caracteres</li>
+        <li>Letras maiúsculas e minúsculas</li>
+        <li>Pelo menos 1 número</li>
+        <li>Pelo menos 1 símbolo (ex: @, #, !, etc.)</li>
+      </ul>
+        <button
+        onclick="login()"
+        class="bg-[#2f80ed] hover:bg-[#5093ee] w-full uppercase text-white py-4 rounded-2xl shadow-md cursor-pointer"
+      >
+        Entrar
+      </button>
+    </section>
+
+    <footer class="w-1/2 flex justify-start max-w-md w-full">
+        <span class="text-sm">
+            Já possui cadastro? <a href="./login.html" class="text-blue-600 underline hover:text-blue-800">Faça login</a>
+        </span>
+    </footer>
+  </body>
+  <script>
+    const inputPassword = document.querySelector("#senha");
+    const passwordStrenght = document.querySelector("#password-strenght");
+    const passwordStrenghtRequested = document.querySelector("#password-requested");
+  
+    const passwordStrenghtLevel1 = document.querySelector("#password-strenght-level-1");
+    const passwordStrenghtLevel2 = document.querySelector("#password-strenght-level-2");
+    const passwordStrenghtLevel3 = document.querySelector("#password-strenght-level-3");
+    const passwordStrenghtLevel4 = document.querySelector("#password-strenght-level-4");
+  
+    inputPassword.addEventListener("input", () => {
+      let password = inputPassword.value;
+  
+      if (password !== "") {
+        passwordStrenght.classList.remove("hidden");
+        passwordStrenght.classList.add("flex");
+        passwordStrenghtRequested.classList.remove("hidden");
+  
+        [passwordStrenghtLevel1, passwordStrenghtLevel2, passwordStrenghtLevel3, passwordStrenghtLevel4].forEach(level => {
+          level.classList.remove("bg-green-500");
+        });
+  
+        const strength = checkPasswordStrength(password);
+  
+        if (strength >= 1) passwordStrenghtLevel1.classList.add("bg-green-500");
+        if (strength >= 2) passwordStrenghtLevel2.classList.add("bg-green-500");
+        if (strength >= 3) passwordStrenghtLevel3.classList.add("bg-green-500");
+        if (strength === 4) passwordStrenghtLevel4.classList.add("bg-green-500");
+  
+      } else {
+        passwordStrenght.classList.add("hidden");
+        passwordStrenght.classList.remove("flex");
+        passwordStrenghtRequested.classList.add("hidden");
+  
+        [passwordStrenghtLevel1, passwordStrenghtLevel2, passwordStrenghtLevel3, passwordStrenghtLevel4].forEach(level => {
+          level.classList.remove("bg-green-500");
+        });
+      }
+    });
+  
+    function checkPasswordStrength(password) {
+      let strength = 0;
+  
+      if (password.length >= 6) strength++; 
+      if (/[a-z]/.test(password) && /[A-Z]/.test(password)) strength++;
+      if (/\d/.test(password)) strength++; 
+      if (/[^A-Za-z0-9]/.test(password)) strength++; 
+  
+      return strength;
+    }
+  </script>
+</html>

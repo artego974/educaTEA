@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- SEO -->
+    <meta
+      name="description"
+      content="Educa Tea - Jogo educacional inclusiva para pessoas com Transtorno do Espectro Autista (TEA)"
+    />
+    <meta
+      name="keywords"
+      content="Educação, Inclusão, Autismo, TEA, Plataforma Educacional"
+    />
+    <meta name="author" content="Nome do Autor ou da Equipe" />
+
+    <meta property="og:title" content="Educa Tea" />
+    <meta
+      property="og:description"
+      content="Jogo educacional para instrutores de pessoas com TEA."
+    />
+    <meta property="og:image" content="./images/Logo-Main.png" />
+    <meta property="og:type" content="website" />
+
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Favicon -->
+    <link rel="icon" href="./images/Favicon.ico" type="image/x-icon" />
+
+    <title>Educa Tea | Jogo Educacional</title>
+
+    <!-- Fonte personalizada (Montserrat) -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet" />
+    <style>
+      body {
+        font-family: 'Montserrat', sans-serif;
+      }
+    </style>
+  </head>
+  <body
+    class="h-[100dvh] w-full flex flex-col justify-center items-center gap-6 bg-cover bg-center bg-no-repeat px-4 bg-gray-100"
+  >
+    <header class="w-1/2 flex flex-col gap-8 max-w-md w-full">
+      <img src="./images/Logo-Escrita.png" alt="" class="w-48 -mb-8 lg:-mb-4 -ml-2" />
+      <h2 class="text-2xl text-[#091d8d]">Área de Login</h2>
+      <div class="header-description flex flex-col gap-8 text-sm">
+        <p>Seja bem vindo.</p>
+        <p>Faça o login para ter acesso à sua conta.</p>
+      </div>
+    </header>
+
+    <section class="w-1/2 flex flex-col gap-6 max-w-md w-full">
+      <input
+        type="email"
+        name="email"
+        id="email"
+        placeholder="Informe o seu email *"
+        class="p-5 w-full border rounded-xl text-sm placeholder-[#333] focus:outline-none focus:ring-2 focus:ring-[#2f80ed]"
+        required
+      />
+      <input
+        type="password"
+        name="senha"
+        id="senha"
+        placeholder="Senha *"
+        class="p-5 w-full border rounded-xl text-sm placeholder-[#333] focus:outline-none focus:ring-2 focus:ring-[#2f80ed]"
+        required
+      />
+      <button
+        onclick="login()"
+        class="bg-[#2f80ed] hover:bg-[#5093ee] w-full uppercase text-white py-4 rounded-2xl shadow-md cursor-pointer"
+      >
+        Entrar
+      </button>
+    </section>
+
+    <footer class="w-1/2 flex justify-end max-w-md w-full text-sm">
+      <a href="cadastro.html" class="text-[#5093ee] underline">Não possui cadastro? Se inscreva!</a>
+    </footer>
+  </body>
+</html>

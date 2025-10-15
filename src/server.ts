@@ -1,6 +1,7 @@
 import express, { Application, Request, Response } from 'express';
 import { AppDataSource } from './config/data-source';
 import ComentarioRoutes from './routes/ComentarioRoutes'
+import UserRoutes from "./routes/UserRoutes"
 import cors from "cors";
 import path from 'path';
 
@@ -32,6 +33,7 @@ AppDataSource.initialize()
   .then(() => {
  
     app.use(ComentarioRoutes);
+    app.use(UserRoutes);
 
     app.listen(3000, () => console.log('Server rodando na porta 3000'));
   })
