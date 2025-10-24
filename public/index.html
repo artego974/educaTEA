@@ -33,6 +33,10 @@
       html {
         scroll-behavior: smooth;
       }
+      [vw-access-button] {
+        bottom: -45dvh !important;
+      }
+
     </style>
 
     <title>Educa Tea | Jogo Educacional</title>
@@ -168,7 +172,7 @@
         class="relative lg:flex lg:items-center lg:justify-center lg:pt-4 lg:pb-16 lg:bg-[#131B26]"
       >
         <div
-          class="relative w-full max-w-4xl overflow-hidden rounded-2xl shadow-lg"
+          class="relative w-full max-w-4xl overflow-hidden lg:rounded-2xl shadow-lg"
         >
           <div
             id="slider"
@@ -177,7 +181,7 @@
             <img
               src="./images/slide-1.png"
               alt="slide 1"
-              class="w-full flex-shrink-0"
+              class="w-full flex-shrink-0 "
             />
             <img
               src="./images/slide-2.png"
@@ -533,6 +537,20 @@
         </button>
       </div>
     </div>
+    <!-- VLibras Plugin -->
+    <div vw class="enabled">
+      <div vw-access-button class="active"></div>
+      <div vw-plugin-wrapper>
+        <div class="vw-plugin-top-wrapper"></div>
+      </div>
+    </div>
+
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    
+    <script>
+      new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+
 
     <script src="./js/script.js"></script>
   </body>
