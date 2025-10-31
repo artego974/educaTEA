@@ -1,64 +1,24 @@
-// document.addEventListener("DOMContentLoaded", async () => {
-  // const comentariosContainer = document.querySelector("#comentarios");
-
-  // async function carregarComentarios() {
-  //   try {
-  //     const response = await fetch("http://localhost:3000/comentarios");
-  //     console.log(response);
-  //     if (!response.ok) throw new Error("Erro ao buscar comentários");
-
-  //     const comentarios = await response.json();
-  //     comentariosContainer.innerHTML = "";
-
-  //     const lista = document.createElement("div");
-  //     lista.classList.add("mt-10", "flex", "flex-col", "gap-3");
-
-  //     comentarios.forEach((c, index) => {
-  //       const card = document.createElement("article");
-  //       card.className =
-  //         `border-[#0033FF] border-2 rounded-lg p-4 lg:py-6 flex items-center gap-4 ` +
-  //         (index % 2 === 0 ? "ml-10 -mr-2" : "mr-10 -ml-2") +
-  //         " lg:w-[500px] w-4/5";
-
-  //       card.innerHTML = `
-  //         <img src="./images/UserComment.png" alt="Avatar usuário" class="size-12 lg:size-16">
-  //         <div>
-  //           <p class="text-sm">${c.comentarioEscrito}</p>
-  //           <label class="text-xs">${c.name}</label>
-  //         </div>
-  //       `;
-  //       lista.appendChild(card);
-  //     });
-
-  //     comentariosContainer.appendChild(lista);
-  //   } catch (error) {
-  //     console.error(error);
-  //     comentariosContainer.innerHTML =
-  //       "<p class='text-red-600'>Não foi possível carregar os comentários.</p>";
-  //   }
-  // }
-
-  // carregarComentarios();
-  // window.carregarComentarios = carregarComentarios;
-// });
-
+// ------------------------------
 // MENU MOBILE
-
+// ------------------------------
 const btnMenu = document.getElementById("btn-menu");
 const btnClose = document.getElementById("btn-close");
 const overlay = document.getElementById("overlay");
 const mobileMenu = document.getElementById("mobile-menu");
 
 btnMenu.addEventListener("click", () => {
-  mobileMenu.classList.toggle("hidden"); // abre/fecha
-  overlay.classList.toggle("hidden"); // abre/fecha
+  mobileMenu.classList.toggle("hidden");
+  overlay.classList.toggle("hidden");
 });
 
-// Fecha o menu ao clicar em um link
 btnClose.addEventListener("click", () => {
-  mobileMenu.classList.toggle("hidden"); // abre/fecha
-  overlay.classList.toggle("hidden"); // abre/fecha
+  mobileMenu.classList.toggle("hidden");
+  overlay.classList.toggle("hidden");
 });
+
+// ------------------------------
+// SLIDER DE CENAS
+// ------------------------------
 const slider = document.getElementById("slider");
 const slides = slider.children;
 const totalSlides = slides.length;
@@ -78,19 +38,81 @@ document.getElementById("prev").addEventListener("click", () => {
   showSlide(index);
 });
 
-// Auto-play (opcional)
+// Auto-play
 setInterval(() => {
   index = (index + 1) % totalSlides;
   showSlide(index);
-}, 5000); // muda a cada 5s
+}, 5000);
 
-const btn_acessar = document.querySelector("#btn-acessar");
+// ------------------------------
+// MODAL "ACESSAR JOGO"
+// ------------------------------
+const btnAcessar = document.getElementById("btn-acessar");
 const modal = document.getElementById("modal-acessar");
 const modalBox = document.getElementById("modal-box");
 const modalClose = document.getElementById("modal-close");
 
-btn_acessar.addEventListener("click", () => {
-  
+btnAcessar.addEventListener("click", () => {
+  // Exibe modal de desenvolvimento
+  modal.classList.remove("hidden");
+  setTimeout(() => {
+    modalBox.classList.remove("opacity-0", "scale-95");
+  }, 10);
+});
+
+modalClose.addEventListener("click", () => {
+  modalBox.classList.add("opacity-0", "scale-95");
+  setTimeout(() => {
+    modal.classList.add("hidden");
+  }, 300);
+});
+
+// ------------------------------
+// MODAL ACESSIBILIDADE
+// ------------------------------
+const modalAcessibilidade = document.getElementById("modalAcessibilidade");
+const btnAcessibilidade = document.getElementById("btn-acessibilidade");
+const btnCloseModalAcessibilidade = document.getElementById("close-modalAcessibilidade");
+
+btnAcessibilidade.addEventListener("click", () => {
+  modalAcessibilidade.classList.remove("hidden");
+  setTimeout(() => {
+    modalAcessibilidade.classList.add("flex");
+  }, 10);
+});
+
+btnCloseModalAcessibilidade.addEventListener("click", () => {
+  modalAcessibilidade.classList.remove("flex");
+  setTimeout(() => {
+    modalAcessibilidade.classList.add("hidden");
+  }, 300);
+});
+
+// ------------------------------
+// FILTROS DE DALTONISMO
+// ------------------------------
+document.getElementById("btn-normal").addEventListener("click", () => {
+  document.body.classList.remove("tritanopia", "protanopia", "deuteranopia");
+});
+
+document.getElementById("btn-tritanopia").addEventListener("click", () => {
+  document.body.classList.add("tritanopia");
+  document.body.classList.remove("protanopia", "deuteranopia");
+});
+
+document.getElementById("btn-protanopia").addEventListener("click", () => {
+  document.body.classList.add("protanopia");
+  document.body.classList.remove("tritanopia", "deuteranopia");
+});
+
+document.getElementById("btn-deuteranopia").addEventListener("click", () => {
+  document.body.classList.add("deuteranopia");
+  document.body.classList.remove("tritanopia", "protanopia");
+});
+
+// ------------------------------
+// BOTÃO ACESSAR JOGO (link externo)
+// ------------------------------
+btnAcessar.addEventListener("click", () => {
   window.open("https://gamifyhealth.itch.io/educatea", "_blank");
-  
 });
