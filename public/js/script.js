@@ -91,23 +91,26 @@ btnCloseModalAcessibilidade.addEventListener("click", () => {
 // ------------------------------
 // FILTROS DE DALTONISMO
 // ------------------------------
+
+const pageContent = document.querySelector("#pageContent")
+
 document.getElementById("btn-normal").addEventListener("click", () => {
-  document.body.classList.remove("tritanopia", "protanopia", "deuteranopia");
+  pageContent.classList.remove("tritanopia", "protanopia", "deuteranopia");
 });
 
 document.getElementById("btn-tritanopia").addEventListener("click", () => {
-  document.body.classList.add("tritanopia");
-  document.body.classList.remove("protanopia", "deuteranopia");
+  pageContent.classList.add("tritanopia");
+  pageContent.classList.remove("protanopia", "deuteranopia");
 });
 
 document.getElementById("btn-protanopia").addEventListener("click", () => {
-  document.body.classList.add("protanopia");
-  document.body.classList.remove("tritanopia", "deuteranopia");
+  pageContent.classList.add("protanopia");
+  pageContent.classList.remove("tritanopia", "deuteranopia");
 });
 
 document.getElementById("btn-deuteranopia").addEventListener("click", () => {
-  document.body.classList.add("deuteranopia");
-  document.body.classList.remove("tritanopia", "protanopia");
+  pageContent.classList.add("deuteranopia");
+  pageContent.classList.remove("tritanopia", "protanopia");
 });
 
 // ------------------------------

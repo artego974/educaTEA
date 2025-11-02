@@ -41,7 +41,7 @@
         position: relative; 
       }
 
-      body.tritanopia {
+      #pageContent.tritanopia {
         filter: grayscale(0%) contrast(90%) sepia(0%) hue-rotate(180deg);
 
         /*{
@@ -50,10 +50,10 @@
         } */
       }
 
-      body.protanopia {
+      #pageContent.protanopia {
         filter: grayscale(0%) contrast(90%) sepia(10%) hue-rotate(-50deg);
       }
-      body.deuteranopia {
+      #pageContent.deuteranopia {
         filter: grayscale(0%) contrast(90%) sepia(0%) hue-rotate(60deg);
       }
 
@@ -73,6 +73,7 @@
     <title>Educa Tea | Jogo Educacional</title>
   </head>
   <body>
+    <div id="pageContent">
     <div
       id="overlay"
       class="hidden bg-black opacity-35 fixed w-full h-full block z-40"
@@ -570,7 +571,12 @@
     
 
     <!-- Botão de Acessibilidade -->
-    <div class="fixed 2xl:bottom-24 lg:bottom-16 bottom-20  right-1.5 group " id="btn-acessibilidade" >
+    
+  
+</div>
+</div>
+
+<div class="fixed 2xl:bottom-24 lg:bottom-16 bottom-20  right-1.5 group " id="btn-acessibilidade" >
   
   <button  class="bg-purple-600 size-12 rounded-full shadow-lg flex items-center justify-center cursor-pointer hover:bg-purple-700">
     <img src="./images/LogoAcessebilidade.jpg" alt="Acessibilidade" class="w-8 h-8 rounded-full">
@@ -661,8 +667,6 @@
   
     </main>
   </div>
-  
-</div>
 
 <!-- VLibras Plugin -->
     <div vw class="enabled">
