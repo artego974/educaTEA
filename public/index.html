@@ -37,6 +37,10 @@
         bottom: -45dvh !important;
       }
 
+      body{
+        position: relative; 
+      }
+
       body.tritanopia {
         filter: grayscale(0%) contrast(90%) sepia(0%) hue-rotate(180deg);
 
@@ -88,12 +92,13 @@
           </div>
         </div>
 
-        <ul class="hidden lg:flex gap-12 uppercase font-bold text-lg">
+        <ul class="hidden lg:flex lg:items-center gap-12 uppercase font-bold text-lg">
           <li><a href="#pitch" class="hover:text-[#0033FF]">Pitch</a></li>
           <li><a href="#jogar" class="hover:text-[#0033FF]">Jogar</a></li>
           <li><a href="#cenas" class="hover:text-[#0033FF]">Cenas</a></li>
           <li><a href="#forum" class="hover:text-[#0033FF]">Fórum</a></li>
           <li><a href="#equipe" class="hover:text-[#0033FF]">Equipe</a></li>
+          <li><a href="./login.html" class="hover:text-[#0033FF]"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-user-round-icon lucide-circle-user-round"><path d="M18 20a6 6 0 0 0-12 0"/><circle cx="12" cy="10" r="4"/><circle cx="12" cy="12" r="10"/></svg></a></li>
         </ul>
       </nav>
       <ul
@@ -106,6 +111,8 @@
         <li><a href="#cenas" class="hover:text-[#0033FF]">Cenas</a></li>
         <li><a href="#forum" class="hover:text-[#0033FF]">Fórum</a></li>
         <li><a href="#equipe" class="hover:text-[#0033FF]">Equipe</a></li>
+        <li><a href="./login.html" class="hover:text-[#0033FF]"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-user-round-icon lucide-circle-user-round"><path d="M18 20a6 6 0 0 0-12 0"/><circle cx="12" cy="10" r="4"/><circle cx="12" cy="12" r="10"/></svg></a></li>
+
       </ul>
     </header>
     <main>
@@ -323,7 +330,7 @@
                 <p class="text-sm">
                     Que orgulho ver estudantes criando algo tão impactante. 🚀
                 </p>
-                <label for="" class="text-xs">>Lucas Andrade</label>
+                <label for="" class="text-xs">Lucas Andrade</label>
               </div>
             </article>
 
@@ -405,8 +412,7 @@
               />
               <div class="">
                 <p class="text-sm">
-                  Lorem Ipsum is simply dummy text of the printing and
-                  typesetting industry.
+                  Testei o jogo e está totalmente aprovado
                 </p>
                 <label for="" class="text-xs">André Oliveira</label>
               </div>
@@ -422,10 +428,9 @@
               />
               <div class="">
                 <p class="text-sm">
-                  Lorem Ipsum is simply dummy text of the printing and
-                  typesetting industry.
+                  Ansioso com as novas atualizações do projeto!
                 </p>
-                <label for="" class="text-xs">Arthur Juwer</label>
+                <label for="" class="text-xs">Carlos Alvarez</label>
               </div>
             </article>
 
@@ -439,10 +444,9 @@
               />
               <div class="">
                 <p class="text-sm">
-                  Lorem Ipsum is simply dummy text of the printing and
-                  typesetting industry.
+                  Gostei da parte que o site está inclusivo para pessoas com daltonismo.
                 </p>
-                <label for="" class="text-xs">Arthur Juwer</label>
+                <label for="" class="text-xs">Miguel dos Santos</label>
               </div>
             </article>
           </div>
@@ -563,16 +567,10 @@
         </button>
       </div>
     </div>
-    <!-- VLibras Plugin -->
-    <div vw class="enabled">
-      <div vw-access-button class="active"></div>
-      <div vw-plugin-wrapper>
-        <div class="vw-plugin-top-wrapper"></div>
-      </div>
-    </div>
+    
 
     <!-- Botão de Acessibilidade -->
-    <div class="fixed 2xl:bottom-24 lg:bottom-16 bottom-18  right-1.5 group " id="btn-acessibilidade" >
+    <div class="fixed 2xl:bottom-24 lg:bottom-16 bottom-20  right-1.5 group " id="btn-acessibilidade" >
   
   <button  class="bg-purple-600 size-12 rounded-full shadow-lg flex items-center justify-center cursor-pointer hover:bg-purple-700">
     <img src="./images/LogoAcessebilidade.jpg" alt="Acessibilidade" class="w-8 h-8 rounded-full">
@@ -582,7 +580,7 @@
     Abrir ajustes de acessibilidade
   </span>
 
-  <div id="modalAcessibilidade" class="hidden flex-col fixed right-4 bottom-24 w-1/3 bg-white text-gray-800 shadow-2xl border border-purple-400 rounded-xl overflow-hidden transition-all duration-300 z-50">
+  <div id="modalAcessibilidade" class="hidden flex-col fixed right-4 bottom-24 lg:w-1/3 w-11/12 bg-white text-gray-800 shadow-2xl border border-purple-400 rounded-xl overflow-hidden transition-all duration-300 z-50">
 
     <!-- Cabeçalho -->
     <header class="flex items-center justify-between bg-purple-600 text-white px-5 py-3">
@@ -613,7 +611,7 @@
         <div class="grid grid-cols-2 gap-2">
           <button id="btn-normal" class="bg-purple-100 hover:bg-purple-200 text-purple-700 font-medium p-4 rounded-md transition flex flex-col gap-2 items-center cursor-pointer">
             <img src="./icones-acessibilidade/normal.png" alt="" class="px-4">
-            Normal/Personalizado
+            Sem daltonismo
           </button>
           
           <button id="btn-tritanopia" class="bg-purple-100 hover:bg-purple-200 text-purple-700 font-medium p-4 rounded-md transition flex flex-col gap-2 items-center cursor-pointer">
@@ -666,7 +664,13 @@
   
 </div>
 
-
+<!-- VLibras Plugin -->
+    <div vw class="enabled">
+      <div vw-access-button class="active"></div>
+      <div vw-plugin-wrapper>
+        <div class="vw-plugin-top-wrapper"></div>
+      </div>
+    </div>
 
     <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
     
