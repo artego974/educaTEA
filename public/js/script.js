@@ -114,6 +114,24 @@ document.getElementById("btn-deuteranopia").addEventListener("click", () => {
 });
 
 // ------------------------------
+// BOTÃO AUMENTAR CURSOR
+// ------------------------------
+
+const btnCursor = document.querySelector("#btn-cursor")
+
+btnCursor.addEventListener("click", ()=>{
+  document.body.style.cursor = "url('./icones-acessibilidade/cursor/Cursor.png'), auto"
+  
+
+  const clickableElements = document.querySelectorAll("a, button, input, textarea");
+  clickableElements.forEach(el => {
+    el.style.cursor = "url('./icones-acessibilidade/cursor/CursorLinks.png'), pointer";
+  });
+
+})
+
+
+// ------------------------------
 // BOTÃO ACESSAR JOGO (link externo)
 // ------------------------------
 btnAcessar.addEventListener("click", () => {
