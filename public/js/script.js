@@ -23,10 +23,25 @@ const slider = document.getElementById("slider");
 const slides = slider.children;
 const totalSlides = slides.length;
 let index = 0;
+let slideInterval;
 
 function showSlide(i) {
   slider.style.transform = `translateX(${-i * 100}%)`;
 }
+
+function iniciarSlider() {
+  slideInterval = setInterval(() => {
+    index = (index + 1) % totalSlides;
+    showSlide(index);
+  }, 5000);
+}
+
+function pausarSlider() {
+  clearInterval(slideInterval);
+}
+
+// Inicializa autoplay do slider
+iniciarSlider();
 
 document.getElementById("next").addEventListener("click", () => {
   index = (index + 1) % totalSlides;
@@ -37,12 +52,6 @@ document.getElementById("prev").addEventListener("click", () => {
   index = (index - 1 + totalSlides) % totalSlides;
   showSlide(index);
 });
-
-// Auto-play
-setInterval(() => {
-  index = (index + 1) % totalSlides;
-  showSlide(index);
-}, 5000);
 
 // ------------------------------
 // MODAL "ACESSAR JOGO"
@@ -68,51 +77,41 @@ modalClose.addEventListener("click", () => {
 });
 
 // ------------------------------
-// MODAL ACESSIBILIDADE
-// ------------------------------
-const modalAcessibilidade = document.getElementById("modalAcessibilidade");
-const btnAcessibilidade = document.getElementById("btn-acessibilidade");
-const btnCloseModalAcessibilidade = document.getElementById("close-modalAcessibilidade");
-
-btnAcessibilidade.addEventListener("click", () => {
-  modalAcessibilidade.classList.remove("hidden");
-  setTimeout(() => {
-    modalAcessibilidade.classList.add("flex");
-  }, 10);
-});
-
-btnCloseModalAcessibilidade.addEventListener("click", () => {
-  modalAcessibilidade.classList.remove("flex");
-  setTimeout(() => {
-    modalAcessibilidade.classList.add("hidden");
-  }, 300);
-});
-
-// ------------------------------
-// FILTROS DE DALTONISMO
-// ------------------------------
-document.getElementById("btn-normal").addEventListener("click", () => {
-  document.body.classList.remove("tritanopia", "protanopia", "deuteranopia");
-});
-
-document.getElementById("btn-tritanopia").addEventListener("click", () => {
-  document.body.classList.add("tritanopia");
-  document.body.classList.remove("protanopia", "deuteranopia");
-});
-
-document.getElementById("btn-protanopia").addEventListener("click", () => {
-  document.body.classList.add("protanopia");
-  document.body.classList.remove("tritanopia", "deuteranopia");
-});
-
-document.getElementById("btn-deuteranopia").addEventListener("click", () => {
-  document.body.classList.add("deuteranopia");
-  document.body.classList.remove("tritanopia", "protanopia");
-});
-
-// ------------------------------
 // BOTÃO ACESSAR JOGO (link externo)
 // ------------------------------
 btnAcessar.addEventListener("click", () => {
   window.open("https://gamifyhealth.itch.io/educatea", "_blank");
+});
+
+// ------------------------------
+// CONTROLE DO YOUTUBE VIA API
+// ------------------------------
+let player;
+
+function onYouTubeIframeAPIReady() {
+  player = new YT.Player("video-youtube"); // ID do seu iframe
+}
+
+// ------------------------------
+// BOTÃO PAUSAR (slider + vídeo)
+// ------------------------------
+const btnPausar = document.querySelector("#btn-pausar");
+let pausado = false;
+
+btnPausar.addEventListener("click", () => {
+  pausado = !pausado;
+
+  if (pausado) {
+    pausarSlider();
+
+    if (player && player.pauseVideo) {
+      player.pauseVideo();
+    }
+  } else {
+    iniciarSlider();
+
+    if (player && player.playVideo) {
+      player.playVideo();
+    }
+  }
 });
