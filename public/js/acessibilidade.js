@@ -132,3 +132,43 @@ btnMascara.addEventListener("click", () => {
 
   document.addEventListener("mousemove", moveMascara);
 });
+
+
+// ------------------------------
+// BOTÃO AUMENTAR CURSOR
+// ------------------------------
+
+const btnDislexia = document.querySelector("#btn-dislexia");
+
+let dislexiaAtivada = false;
+
+btnDislexia.addEventListener("click", () => {
+
+  if (!dislexiaAtivada) {
+    document.body.style.fontFamily = "OpenDyslexic, sans-serif";
+
+    btnDislexia.innerHTML = `
+      <img src="./icones-acessibilidade/semdislexia.webp" alt="" class="px-4 2xl:w-3/5 w-4/5">
+      Desativar fonte
+    `;
+
+    dislexiaAtivada = true;
+  } 
+  else {
+    document.body.style.fontFamily = "system-ui, sans-serif";
+
+    btnDislexia.innerHTML = `
+      <img src="./icones-acessibilidade/dislexia.webp" alt="" class="px-4 2xl:w-3/5 w-4/5">
+      Ativar fonte
+    `;
+
+    dislexiaAtivada = false;
+  }
+
+});
+
+
+
+
+
+
