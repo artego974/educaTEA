@@ -1,4 +1,4 @@
-# educaTEA
+# EducaTEA
 
 ## Entenda o site:
 

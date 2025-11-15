@@ -27,8 +27,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script src="./js/acessibilidade.js" defer></script>
-
-    <!-- Favicon -->
+    
     <link rel="icon" href="./images/Favicon.ico" type="image/x-icon" />
     <style>
       html {
@@ -82,7 +81,7 @@
     ></div>
     <header class="px-8 py-6 flex justify-between items-center">
       <img
-        src="./images/Logo-Escrita.png"
+        src="./images/logos/Logo-Escrita.png"
         alt="Logo Escrita Educa TEA"
         class="w-36"
       />
@@ -98,6 +97,7 @@
         <ul class="hidden lg:flex lg:items-center gap-12 uppercase font-bold text-lg">
           <li><a href="#pitch" class="hover:text-[#0033FF]">Pitch</a></li>
           <li><a href="#jogar" class="hover:text-[#0033FF]">Jogar</a></li>
+          <li><a href="#feiras" class="hover:text-[#0033FF]">Feiras</a></li>
           <li><a href="#cenas" class="hover:text-[#0033FF]">Cenas</a></li>
           <li><a href="#forum" class="hover:text-[#0033FF]">Fórum</a></li>
           <li><a href="#equipe" class="hover:text-[#0033FF]">Equipe</a></li>
@@ -108,9 +108,17 @@
         id="mobile-menu"
         class="hidden fixed top-0 right-0 w-4/5 h-full bg-white shadow-lg flex flex-col items-center gap-12 p-12 uppercase font-bold text-lg z-50"
       >
-        <li class="absolute right-10 text-[#0033FF]" id="btn-close">X</li>
+        <li 
+          class="absolute right-10 flex items-center justify-center w-10 h-10 cursor-pointer"
+          id="btn-close"
+        >
+          <span class="absolute bg-[#F9A318] w-10 h-2 rotate-45 rounded-full border-1 border-[#828282]"></span>
+          <span class="absolute bg-[#F9A318] w-10 h-2 -rotate-45 rounded-full border-1 border-[#828282]"></span>
+        </li>
+
         <li><a href="#pitch" class="hover:text-[#0033FF]">Pitch</a></li>
         <li><a href="#jogar" class="hover:text-[#0033FF]">Jogar</a></li>
+        <li><a href="#feiras" class="hover:text-[#0033FF]">Feiras</a></li>
         <li><a href="#cenas" class="hover:text-[#0033FF]">Cenas</a></li>
         <li><a href="#forum" class="hover:text-[#0033FF]">Fórum</a></li>
         <li><a href="#equipe" class="hover:text-[#0033FF]">Equipe</a></li>
@@ -123,7 +131,7 @@
         class="bg-[url(./images/phone-Background.png)] flex flex-col items-center justify-center px-8 py-14 gap-y-5"
       >
         <img
-          src="./images/Logo-Main.png"
+          src="./images/logos/Logo-Main.png"
           alt="Logo Principal Educa TEA"
           class="w-48"
         />
@@ -197,7 +205,7 @@
           </div>
         </div>
 
-        <section class="flex flex-col gap-12 ">
+        <section class="flex flex-col gap-12 " id="feiras">
 
           <h1 class="lg:mt-6 text-white text-center text-2xl font-bold">
             NOSSAS PARTICIPAÇÕES EM FEIRAS
@@ -206,28 +214,28 @@
           <div class="flex items-center justify-center gap-12">
 
             <div class="lg:size-[440px] size-[200px] lg:block hidden relative">
-              <img src="./images/Feira2.png" alt="" class="w-full h-full object-cover">
+              <img src="./images/feiras/Feira2.png" alt="" class="w-full h-full object-cover">
               <div class="absolute inset-0 bg-black/40 pointer-events-none"></div>
               <span class="absolute bg-[#D99CC0] lg:h-28 h-16 block w-full -bottom-5.5">
                 <div class="absolute inset-0 bg-black/20 pointer-events-none"></div>
-                <img src="./images/FeiraLogo2.png" alt="" class="w-44 absolute bottom-16 left-1/2 transform -translate-x-1/2">
+                <img src="./images/feiras/FeiraLogo2.png" alt="" class="w-44 absolute bottom-16 left-1/2 transform -translate-x-1/2">
               </span>
             </div>
             
 
             <div class="lg:size-[500px] size-[325px] relative">
-              <img src="./images/Feira1.png" alt="" class="">
+              <img src="./images/feiras/Feira1.png" alt="" class="">
               <span class="absolute bg-[#3E489C] lg:h-28 h-24 block w-full -bottom-5.5">
-                <img src="./images/FeiraLogo1.png" alt="" class="lg:w-52 w-40 absolute bottom-16 left-1/2 transform -translate-x-1/2">
+                <img src="./images/feiras/FeiraLogo1.png" alt="" class="lg:w-52 w-40 absolute bottom-16 left-1/2 transform -translate-x-1/2">
               </span>
             </div>
 
             <div class="lg:size-[440px] size-[200px] lg:block hidden relative">
-              <img src="./images/Feira3.png" alt="" class="w-full h-full object-cover">
+              <img src="./images/feiras/Feira3.png" alt="" class="w-full h-full object-cover">
               <div class="absolute inset-0 bg-black/40 pointer-events-none"></div>
               <span class="absolute bg-[#FF7235] lg:h-28 h-16 block w-full -bottom-5.5">
                 <div class="absolute inset-0 bg-black/20 pointer-events-none"></div>
-                <img src="./images/FeiraLogo3.png" alt="" class="w-72 absolute bottom-16 left-1/2 transform -translate-x-1/2">
+                <img src="./images/feiras/FeiraLogo3.png" alt="" class="w-72 absolute bottom-16 left-1/2 transform -translate-x-1/2">
               </span>
             </div>
          
@@ -235,12 +243,15 @@
 
         </section>
 
-        <p
-          class="lg:hidden mt-12 mb-8 text-center text-white text-3xl px-2 font-light uppercase text"
-        >
-          um jogo criado com propósito educacional desenvolvido por alunos do
-          e.m senac.
-        </p>
+        <section class="w-full px-10 flex gap-10 lg:gap-0 lg:grid lg:grid-cols-6 place-items-center content-center lg:overflow-x-hidden overflow-auto">
+          <img src="./images/feiras/FeiraLogo1.png" class="lg:w-50 w-30" alt="">
+          <img src="./images/feiras/FeiraLogo2.png" class="lg:w-50 w-30" alt="">
+          <img src="./images/feiras/FeiraLogo3.png" class="lg:w-50 w-30" alt="">
+          <img src="./images/feiras/FeiraLogo4.png" class="lg:w-50 w-30" alt="">
+          <img src="./images/feiras/FeiraLogo5.png" class="lg:w-50 w-30" alt="">
+          <img src="./images/feiras/FeiraLogo7.png" class="lg:w-50 w-30" alt="">
+        </section>
+
         <h1 class="lg:mt-6 text-white text-2xl font-bold">
           EXPERIMENTE E APRENDA!
         </h1>
@@ -257,17 +268,17 @@
             class="flex transition-transform duration-700 ease-in-out"
           >
             <img
-              src="./images/slide-1.png"
+              src="./images/carrosel-jogo/slide-1.png"
               alt="slide 1"
               class="w-full flex-shrink-0 "
             />
             <img
-              src="./images/slide-2.png"
+              src="./images/carrosel-jogo/slide-2.png"
               alt="slide 2"
               class="w-full flex-shrink-0"
             />
             <img
-              src="./images/slide-3.png"
+              src="./images/carrosel-jogo/slide-3.png"
               alt="slide 3"
               class="w-full flex-shrink-0"
             />
@@ -494,14 +505,69 @@
               </div>
             </article>
           </div>
+
+          <div class="hidden mt-10 2xl:flex flex-col gap-3">
+            <article
+              class="border-[#0033FF] border-2 rounded-lg p-4 lg:py-6 flex items-center gap-4 ml-10 -mr-2 lg:w-[500px]"
+            >
+              <img
+                src="./images/UserComment.png"
+                alt=""
+                class="size-12 lg:size-16"
+              />
+              <div class="">
+                <p class="text-sm">
+                  Testei o jogo e está totalmente aprovado
+                </p>
+                <label for="" class="text-xs">André Oliveira</label>
+              </div>
+            </article>
+
+            <article
+              class="border-[#0033FF] border-2 rounded-lg p-4 lg:py-6 flex items-center gap-4 mr-10 -ml-2 lg:w-[500px]"
+            >
+              <img
+                src="./images/UserComment.png"
+                alt=""
+                class="size-12 lg:size-16"
+              />
+              <div class="">
+                <p class="text-sm">
+                  Ansioso com as novas atualizações do projeto!
+                </p>
+                <label for="" class="text-xs">Carlos Alvarez</label>
+              </div>
+            </article>
+
+            <article
+              class="border-[#0033FF] border-2 rounded-lg p-4 lg:py-6 flex items-center gap-4 ml-10 -mr-2 lg:w-[500px]"
+            >
+              <img
+                src="./images/UserComment.png"
+                alt=""
+                class="size-12 lg:size-16"
+              />
+              <div class="">
+                <p class="text-sm">
+                  Gostei da parte que o site está inclusivo para pessoas com daltonismo.
+                </p>
+                <label for="" class="text-xs">Miguel dos Santos</label>
+              </div>
+            </article>
+          </div>
         </div>
 
-        <a
-          href="./forum.html"
-          class="text-center font-bold uppercase text-xl mt-4 lg:mt-12 bg hover:text-[#0033FF]"
-          >Ver mais</a
-        >
-        <span class="mt-8 lg:mt-12 w-3/5 h-px bg-black block"></span>
+        </div>
+
+        
+        <div class="flex flex-col gap-4 lg:gap-12 items-center justify-center  w-full mb-8 lg:mb-12">
+          <a
+            href="./forum.html"
+            class="text-center font-bold uppercase text-xl bg hover:text-[#0033FF]"
+            >Ver mais</a
+          >
+          <span class="w-4/5 lg:w-3/5 h-px bg-black block"></span>
+        </div>
       </section>
 
       <section
@@ -529,7 +595,7 @@
                 <label
                   for=""
                   class="bg-[#0033FF] text-white p-2 px-6 font-bold rounded-2xl -mt-5"
-                  >Arthur Cidade Matjie</label
+                  >Arthur Cidade Matjjie</label
                 >
               </article>
 
@@ -622,7 +688,7 @@
 <div class="fixed 2xl:bottom-24 lg:bottom-16 bottom-20  right-1.5 group " id="btn-acessibilidade" >
   
   <button  class="bg-purple-600 size-12 rounded-full shadow-lg flex items-center justify-center cursor-pointer hover:bg-purple-700">
-    <img src="./images/LogoAcessebilidade.jpg" alt="Acessibilidade" class="w-8 h-8 rounded-full">
+    <img src="./images/logos/LogoAcessebilidade.jpg" alt="Acessibilidade" class="w-8 h-8 rounded-full">
   </button>
 
   <span class="hidden group-hover:block absolute bottom-2 right-14 bg-purple-600 text-white text-sm rounded-lg px-3 py-2 shadow-lg whitespace-nowrap">
@@ -635,12 +701,7 @@
     <header class="flex items-center justify-between bg-purple-600 text-white px-5 py-3">
       <h1 class="text-lg font-semibold tracking-wide">EDUCATEA</h1>
       <div class="flex items-center gap-2">
-        <!-- <button
-          class="text-xs px-2 py-1 rounded-md bg-purple-500 hover:bg-purple-400 transition"
-          title="Redimensionar"
-        >
-          Redimensionar
-        </button> -->
+
         <button
           id="close-modalAcessibilidade"
           class="cursor-pointer text-white text-sm font-bold transition size-6 bg-purple-400 rounded-full flex items-center justify-center "
@@ -651,7 +712,6 @@
       </div>
     </header>
   
-    <!-- Conteúdo -->
     <main class="p-5 overflow-y-auto max-h-[70vh] space-y-6">
 
       <!-- Daltonismo -->
